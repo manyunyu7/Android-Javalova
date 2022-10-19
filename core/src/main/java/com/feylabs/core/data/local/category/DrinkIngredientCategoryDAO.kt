@@ -10,7 +10,7 @@ import com.feylabs.core.domain.QuoteApiResponse  as Md
 interface DrinkIngredientCategoryDAO {
 
     @Query("SELECT * FROM drinkingredientcategoryitem")
-    fun getAll(): List<DrinkGlassCategory.DrinkGlassCategoryItem>?
+    fun getAll(): List<DrinkIngredientCategoryItem>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(quotes: List<DrinkIngredientCategoryItem>)
