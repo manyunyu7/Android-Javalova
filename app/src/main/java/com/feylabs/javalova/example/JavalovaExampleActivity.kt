@@ -19,7 +19,31 @@ class JavalovaExampleActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        viewModel.getQuote()
+        viewModel.getGlassCategory()
+        viewModel.getCategoryIngredient()
+        viewModel.getCategoryGeneral()
+        viewModel.getCategoryAlcoholic()
+
+        viewModel.categoryAlcoholicLiveData.observe(this){
+            if (it is AppResult.Success){
+                binding.tvAlcoholic.text="Alcoholic " + it.data.toString()
+            }
+        }
+        viewModel.categoryGlassLiveData.observe(this){
+            if (it is AppResult.Success){
+                binding.tvGlass.text="Glass " +it.data.toString()
+            }
+        }
+        viewModel.categoryGeneralLiveData.observe(this){
+            if (it is AppResult.Success){
+                binding.tvGeneral.text="General "+it.data.toString()
+            }
+        }
+        viewModel.categoryIngredientLiveData.observe(this){
+            if (it is AppResult.Success){
+                binding.tvIngredient.text="Ingredient "+it.data.toString()
+            }
+        }
 
         viewModel.quoteLiveData.observe(this) {
             when (it) {

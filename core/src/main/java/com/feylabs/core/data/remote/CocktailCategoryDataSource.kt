@@ -18,7 +18,8 @@ class CocktailCategoryDataSource(
             emit(AppResult.Loading())
             val res = api.getGeneralCategory()
             if (res.isSuccessful){
-                emit(AppResult.Success(res.body()))
+                var data =res.body()
+                emit(AppResult.Success(res.body()?.drinks))
             }else{
                 emit(AppResult.Error(res.errorBody().toString()))
             }
@@ -30,7 +31,7 @@ class CocktailCategoryDataSource(
             emit(AppResult.Loading())
             val res = api.getGlassCategory()
             if (res.isSuccessful){
-                emit(AppResult.Success(res.body()))
+                emit(AppResult.Success(res.body()?.drinks))
             }else{
                 emit(AppResult.Error(res.errorBody().toString()))
             }
@@ -42,7 +43,7 @@ class CocktailCategoryDataSource(
             emit(AppResult.Loading())
             val res = api.getIngredientCategory()
             if (res.isSuccessful){
-                emit(AppResult.Success(res.body()))
+                emit(AppResult.Success(res.body()?.drinks))
             }else{
                 emit(AppResult.Error(res.errorBody().toString()))
             }
@@ -54,7 +55,7 @@ class CocktailCategoryDataSource(
             emit(AppResult.Loading())
             val res = api.getAlcoholicCategory()
             if (res.isSuccessful){
-                emit(AppResult.Success(res.body()))
+                emit(AppResult.Success(res.body()?.drinks))
             }else{
                 emit(AppResult.Error(res.errorBody().toString()))
             }

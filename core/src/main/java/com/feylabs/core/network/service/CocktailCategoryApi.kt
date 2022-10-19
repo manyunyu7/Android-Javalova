@@ -3,24 +3,23 @@ package com.feylabs.core.network.service
 import com.feylabs.core.domain.*
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface CocktailCategoryApi {
-
+//    https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Shake&i=Rum&g=Balloon%20Glass&a=Optional%20alcohol
     @GET("list.php?c=list")
     suspend fun getGeneralCategory(
-    ): Response<List<DrinkGeneralCategory.DrinkGeneralCategoryItem>>
+    ): Response<DrinkGeneralCategory>
 
     @GET("list.php?g=list")
     suspend fun getGlassCategory(
-    ): Response<List<DrinkGlassCategory.DrinkGlassCategoryItem>>
+    ): Response<DrinkGlassCategory>
 
     @GET("list.php?i=list")
     suspend fun getIngredientCategory(
-    ): Response<List<DrinkIngredientCategory.DrinkIngredientCategoryItem>>
+    ): Response<DrinkIngredientCategory>
 
     @GET("list.php?a=list")
     suspend fun getAlcoholicCategory(
-    ): Response<List<DrinkAlcoholicCategory.DrinkAlcoholicCategoryItem>>
+    ): Response<DrinkAlcoholicCategory>
 
 }
