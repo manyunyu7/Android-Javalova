@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -73,6 +75,21 @@ abstract class BaseFragment : Fragment() {
             }
             )
     }
+
+
+    fun setLayoutManagerGridVertical(spanCount: Int = 2) = GridLayoutManager(
+        requireContext(), spanCount,
+        GridLayoutManager.VERTICAL, false
+    )
+
+    fun setLayoutManagerGridHorizontal(spanCount: Int = 2) = GridLayoutManager(
+        requireContext(), spanCount,
+        GridLayoutManager.HORIZONTAL, false
+    )
+
+    fun setLayoutManagerLinear() = LinearLayoutManager(requireContext())
+    fun setLayoutManagerHorizontal() =
+        LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
 
 

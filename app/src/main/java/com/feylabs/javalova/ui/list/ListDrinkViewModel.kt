@@ -1,4 +1,4 @@
-package com.feylabs.javalova.example
+package com.feylabs.javalova.ui.list
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,8 +13,7 @@ import com.feylabs.core.domain.DrinkIngredientCategory.DrinkIngredientCategoryIt
 import com.feylabs.core.util.AppResult
 import kotlinx.coroutines.launch
 
-@Deprecated("Unused, only for testing")
-class JavalovaExampleViewModel(
+class ListDrinkViewModel(
     private val repository: JavalovaRepository,
     private val categoryRepository: CocktailCategoryRepository
 ) : ViewModel() {

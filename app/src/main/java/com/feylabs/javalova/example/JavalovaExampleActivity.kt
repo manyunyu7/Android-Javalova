@@ -11,6 +11,7 @@ import com.feylabs.javalova.base.BaseActivity
 import com.feylabs.javalova.databinding.ActivityJavalovaExampleBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
+@Deprecated("Unused, only for testing")
 class JavalovaExampleActivity : BaseActivity() {
 
     private val binding by lazy { ActivityJavalovaExampleBinding.inflate(layoutInflater) }
