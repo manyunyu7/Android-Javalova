@@ -18,10 +18,6 @@ class HomeViewModel(
     private val categoryRepository: CocktailCategoryRepository
 ) : ViewModel() {
 
-    private var _quoteLiveData =
-        MutableLiveData<AppResult<List<QuoteApiResponse.QuoteApiResponseItem>>>()
-    val quoteLiveData get() = _quoteLiveData
-
     private var _categoryGlassLiveData =
         MutableLiveData<AppResult<List<DrinkGlassCategoryItem>>>()
     val categoryGlassLiveData get() = _categoryGlassLiveData
@@ -70,37 +66,6 @@ class HomeViewModel(
         }
     }
 
-    fun getQuote() {
-        _quoteLiveData.postValue(AppResult.Loading())
-        viewModelScope.launch {
-            val result = repository.getAllJavalovaData()
-            result.collect {
-                _quoteLiveData.postValue(it)
-            }
-        }
-    }
-
-    fun getDrinkList(
-        category: String?,
-        glass: String?,
-        ingredient: String?,
-        alcoholic: String?,
-        lastValue: String?,
-    ) {
-        _drinkListLiveData.postValue(AppResult.Loading())
-        viewModelScope.launch {
-            val result = categoryRepository.getListDrink(
-                category = category,
-                glass = glass,
-                ingredient = ingredient,
-                alcoholic = alcoholic,
-                lastValue = lastValue
-            )
-            result.collect {
-                _drinkListLiveData.postValue(it)
-            }
-        }
-    }
 
     fun getCategoryIngredient() {
         _categoryIngredientLiveData.postValue(AppResult.Loading())

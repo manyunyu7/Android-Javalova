@@ -46,58 +46,12 @@ class SearchViewModel(
         MutableLiveData<AppResult<DrinkDetailList>>()
     val searchLiveData get() = _searchLiveData
 
-    private var _detailLiveData =
-        MutableLiveData<AppResult<DrinkDetailList>>()
-    val detailLiveData get() = _detailLiveData
-
     fun search(name:String){
         _searchLiveData.postValue(AppResult.Loading())
         viewModelScope.launch {
             val result = categoryRepository.searchByName(name)
             result.collect{
                 _searchLiveData.postValue(it)
-            }
-        }
-    }
-
-    fun detail(id:String){
-        _detailLiveData.postValue(AppResult.Loading())
-        viewModelScope.launch {
-            val result = categoryRepository.lookupById(id)
-            result.collect{
-                _detailLiveData.postValue(it)
-            }
-        }
-    }
-
-    fun getQuote() {
-        _quoteLiveData.postValue(AppResult.Loading())
-        viewModelScope.launch {
-            val result = repository.getAllJavalovaData()
-            result.collect {
-                _quoteLiveData.postValue(it)
-            }
-        }
-    }
-
-    fun getDrinkList(
-        category: String?,
-        glass: String?,
-        ingredient: String?,
-        alcoholic: String?,
-        lastValue: String?,
-    ) {
-        _drinkListLiveData.postValue(AppResult.Loading())
-        viewModelScope.launch {
-            val result = categoryRepository.getListDrink(
-                category = category,
-                glass = glass,
-                ingredient = ingredient,
-                alcoholic = alcoholic,
-                lastValue = lastValue
-            )
-            result.collect {
-                _drinkListLiveData.postValue(it)
             }
         }
     }

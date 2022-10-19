@@ -5,18 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
-import com.feylabs.core.domain.DrinkGeneral
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import com.feylabs.core.domain.DrinkDetail
 import com.feylabs.core.util.AppResult.*
 import com.feylabs.javalova.R
 import com.feylabs.javalova.base.BaseFragment
-import com.feylabs.javalova.databinding.FragmentHomeBinding
-import com.feylabs.javalova.databinding.FragmentListDrinkBinding
 import com.feylabs.javalova.databinding.FragmentSearchNameBinding
-import com.feylabs.javalova.ui.home.adapter.AlcoholicAdapter
-import com.feylabs.javalova.ui.home.adapter.GeneralAdapter
-import com.feylabs.javalova.ui.home.adapter.GlassAdapter
-import com.feylabs.javalova.ui.home.adapter.IngredientAdapter
-import com.feylabs.javalova.ui.list.adapter.ListDrinkAdapter
 import com.feylabs.javalova.ui.search.adapter.SearchAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -68,6 +63,16 @@ class SearchNameFragment : BaseFragment() {
     }
 
     override fun initAction() {
+        adapterListDrink.setupAdapterInterface(object : SearchAdapter.ItemInterface {
+            override fun onclick(model: DrinkDetail) {
+                findNavController().navigate(
+                    R.id.nav_detailCocktailFragment, bundleOf(
+                        "id" to model.idDrink
+                    )
+                )
+            }
+        })
+
         binding.searchView.requestFocus()
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {

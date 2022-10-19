@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.feylabs.javalova.R
 import com.feylabs.javalova.ui.detail.MyIngredientModel as AdapterModel
 import com.feylabs.javalova.util.ImageViewUtils.loadImageFromURL
-import com.feylabs.javalova.databinding.ItemIngredientsCategoryBinding
 import com.feylabs.javalova.databinding.ItemRecipeIngredientBinding  as AdapterBinding
 
 class IngredientRecipeAdapter : RecyclerView.Adapter<IngredientRecipeAdapter.AdapterViewHolder>() {
@@ -20,7 +19,7 @@ class IngredientRecipeAdapter : RecyclerView.Adapter<IngredientRecipeAdapter.Ada
 
     fun setWithNewData(data: MutableList<AdapterModel>) {
         this.data.clear()
-        var tempData = mutableListOf<AdapterModel>()
+        val tempData = mutableListOf<AdapterModel>()
         data.forEachIndexed { index, myIngredientModel ->
             if (myIngredientModel.name != null)
                 tempData.add(myIngredientModel)
