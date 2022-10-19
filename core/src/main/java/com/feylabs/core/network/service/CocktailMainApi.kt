@@ -6,7 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CocktailMainApi {
-//    https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Shake&i=Rum&g=Balloon%20Glass&a=Optional%20alcohol
 
     @GET("filter.php")
     suspend fun getListDrink(
@@ -15,5 +14,16 @@ interface CocktailMainApi {
         @Query("a") alcoholicCategory: String? = null,
         @Query("g") glassCategory: String? = null,
     ): Response<DrinkGeneralResponse>
+
+    @GET("search.php?s=margarita")
+    suspend fun searchCocktailByName(
+        @Query("g") searchKeyword: String? = null,
+    ): Response<DrinkDetailList>
+
+    @GET("lookup.php?s=margarita")
+    suspend fun lookupId(
+        @Query("i") cocktailId: String? = null,
+    ): Response<DrinkDetailList>
+
 
 }
