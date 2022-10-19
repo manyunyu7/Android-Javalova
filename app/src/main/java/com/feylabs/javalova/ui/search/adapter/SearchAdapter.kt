@@ -1,16 +1,18 @@
-package com.feylabs.javalova.ui.list.adapter
+package com.feylabs.javalova.ui.search.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
-import com.feylabs.core.domain.DrinkGeneral as AdapterModel
+import com.feylabs.core.domain.DrinkDetail as AdapterModel
+import com.feylabs.core.domain.DrinkGeneral
 import com.feylabs.javalova.R
 import com.feylabs.javalova.databinding.ItemDrinksCompactBinding as AdapterBinding
+import com.feylabs.javalova.databinding.ItemCategoryBinding
 import com.feylabs.javalova.util.ImageViewUtils.loadImageFromURL
 
-class ListDrinkAdapter : RecyclerView.Adapter<ListDrinkAdapter.AdapterViewHolder>() {
+class SearchAdapter : RecyclerView.Adapter<SearchAdapter.AdapterViewHolder>() {
 
     val data = mutableListOf<AdapterModel>()
     lateinit var adapterInterface: ItemInterface
