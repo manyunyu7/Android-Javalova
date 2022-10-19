@@ -26,7 +26,7 @@ data class DrinkDetail(
     @SerializedName("strDrink")
     var strDrink: String = "",
     @SerializedName("strDrinkAlternate")
-    var strDrinkAlternate: Any? = Any(),
+    var strDrinkAlternate: String = "",
     @SerializedName("strDrinkThumb")
     var strDrinkThumb: String = "",
     @SerializedName("strGlass")
@@ -40,17 +40,17 @@ data class DrinkDetail(
     @SerializedName("strIngredient1")
     var strIngredient1: String = "",
     @SerializedName("strIngredient10")
-    var strIngredient10: Any? = Any(),
+    var strIngredient10: String = "",
     @SerializedName("strIngredient11")
-    var strIngredient11: Any? = Any(),
+    var strIngredient11: String = "",
     @SerializedName("strIngredient12")
-    var strIngredient12: Any? = Any(),
+    var strIngredient12: String = "",
     @SerializedName("strIngredient13")
-    var strIngredient13: Any? = Any(),
+    var strIngredient13: String = "",
     @SerializedName("strIngredient14")
-    var strIngredient14: Any? = Any(),
+    var strIngredient14: String = "",
     @SerializedName("strIngredient15")
-    var strIngredient15: Any? = Any(),
+    var strIngredient15: String = "",
     @SerializedName("strIngredient2")
     var strIngredient2: String = "",
     @SerializedName("strIngredient3")
@@ -64,37 +64,37 @@ data class DrinkDetail(
     @SerializedName("strIngredient7")
     var strIngredient7: String? = "",
     @SerializedName("strIngredient8")
-    var strIngredient8: Any? = Any(),
+    var strIngredient8: String = "",
     @SerializedName("strIngredient9")
-    var strIngredient9: Any? = Any(),
+    var strIngredient9: String = "",
     @SerializedName("strInstructions")
     var strInstructions: String = "",
     @SerializedName("strInstructionsDE")
     var strInstructionsDE: String? = "",
     @SerializedName("strInstructionsES")
-    var strInstructionsES: Any? = Any(),
+    var strInstructionsES: String = "",
     @SerializedName("strInstructionsFR")
-    var strInstructionsFR: Any? = Any(),
+    var strInstructionsFR: String = "",
     @SerializedName("strInstructionsIT")
     var strInstructionsIT: String = "",
     @SerializedName("strInstructionsZH-HANS")
-    var strInstructionsZHHANS: Any? = Any(),
+    var strInstructionsZHHANS: String = "",
     @SerializedName("strInstructionsZH-HANT")
-    var strInstructionsZHHANT: Any? = Any(),
+    var strInstructionsZHHANT: String = "",
     @SerializedName("strMeasure1")
     var strMeasure1: String = "",
     @SerializedName("strMeasure10")
-    var strMeasure10: Any? = Any(),
+    var strMeasure10: String = "",
     @SerializedName("strMeasure11")
-    var strMeasure11: Any? = Any(),
+    var strMeasure11: String = "",
     @SerializedName("strMeasure12")
-    var strMeasure12: Any? = Any(),
+    var strMeasure12: String = "",
     @SerializedName("strMeasure13")
-    var strMeasure13: Any? = Any(),
+    var strMeasure13: String = "",
     @SerializedName("strMeasure14")
-    var strMeasure14: Any? = Any(),
+    var strMeasure14: String = "",
     @SerializedName("strMeasure15")
-    var strMeasure15: Any? = Any(),
+    var strMeasure15: String = "",
     @SerializedName("strMeasure2")
     var strMeasure2: String = "",
     @SerializedName("strMeasure3")
@@ -108,11 +108,12 @@ data class DrinkDetail(
     @SerializedName("strMeasure7")
     var strMeasure7: String? = "",
     @SerializedName("strMeasure8")
-    var strMeasure8: Any? = Any(),
+    var strMeasure8: String = "",
     @SerializedName("strMeasure9")
-    var strMeasure9: Any? = Any(),
+    var strMeasure9: String = "",
     @SerializedName("strTags")
     var strTags: String? = "",
     @SerializedName("strVideo")
-    var strVideo: Any? = Any()
-)
+    var strVideo: String = ""
+){
+}

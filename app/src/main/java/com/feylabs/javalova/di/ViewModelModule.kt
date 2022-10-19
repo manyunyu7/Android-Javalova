@@ -1,6 +1,7 @@
 package com.feylabs.javalova.di
 
 import com.feylabs.javalova.example.JavalovaExampleViewModel
+import com.feylabs.javalova.ui.detail.DetailCocktailViewModel
 import com.feylabs.javalova.ui.home.HomeViewModel
 import com.feylabs.javalova.ui.list.ListDrinkViewModel
 import com.feylabs.javalova.ui.search.SearchViewModel
@@ -14,4 +15,5 @@ val viewModelModule = module {
     viewModel { HomeViewModel(get(),get()) }
     viewModel { ListDrinkViewModel(get(),get()) }
     viewModel { SearchViewModel(get(),get()) }
+    viewModel { DetailCocktailViewModel(get(),get()) }
 }

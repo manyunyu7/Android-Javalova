@@ -108,14 +108,16 @@
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/activity_container.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/activity_javalova_example.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_cocktail_detail.xml" value="0.264172335600907" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_filter.xml" value="0.394392523364486" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_list_drink.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_search_name.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_category.xml" value="0.33" />
-        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_drinks.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_drinks.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_drinks_compact.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_ingredients_category.xml" value="0.12395833333333334" />
+        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_recipe_ingredient.xml" value="0.8125" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/layout_search_box.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/menu/activity_main_drawer.xml" value="0.1171875" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/menu/user_main_menu.xml" value="0.1171875" />

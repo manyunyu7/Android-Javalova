@@ -22,4 +22,6 @@
     <string name="title_based_on_category">Based On Category</string>
     <string name="title_choose_item">Choose Item</string>
     <string name="message_please_fill_filter">Please fill at least one filter</string>
+    <string name="title_data_not_found">Data Not Found</string>
+    <string name="title_recipe">Recipe</string>
 </resources>

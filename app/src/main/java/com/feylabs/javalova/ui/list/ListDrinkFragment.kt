@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.feylabs.core.domain.DrinkGeneral
 import com.feylabs.core.util.AppResult.*
 import com.feylabs.javalova.R
@@ -79,6 +81,14 @@ class ListDrinkFragment : BaseFragment() {
     }
 
     override fun initAction() {
+        adapterListDrink.setupAdapterInterface(object :ListDrinkAdapter.ItemInterface{
+            override fun onclick(model: DrinkGeneral) {
+                findNavController().navigate(R.id.nav_detailCocktailFragment, bundleOf(
+                    "id" to model.idDrink
+                ))
+            }
+        })
+
         binding.btnLoadMore.setOnClickListener {
             viewModel.getDrinkList(
                 category = category,
