@@ -20,9 +20,7 @@ import com.feylabs.javalova.ui.home.adapter.GlassAdapter
 import com.feylabs.javalova.ui.home.adapter.IngredientAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
-
 class HomeFragment : BaseFragment() {
-
 
     val viewModel: HomeViewModel by viewModel()
     private var _binding: FragmentHomeBinding? = null
@@ -77,7 +75,6 @@ class HomeFragment : BaseFragment() {
                 }
             }
         }
-
         viewModel.categoryIngredientLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is Error -> {
@@ -96,7 +93,6 @@ class HomeFragment : BaseFragment() {
                 }
             }
         }
-
         viewModel.categoryGeneralLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is Error -> {
@@ -114,7 +110,6 @@ class HomeFragment : BaseFragment() {
                 }
             }
         }
-
         viewModel.categoryGlassLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is Error -> {
@@ -136,6 +131,9 @@ class HomeFragment : BaseFragment() {
 
     override fun initAction() {
 
+        binding.btnFilter.setOnClickListener {
+            findNavController().navigate(R.id.nav_initFilterFragment)
+        }
         binding.searchBox.root.setOnClickListener {
             findNavController().navigate(R.id.nav_searchNameFragment)
         }
