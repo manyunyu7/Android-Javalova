@@ -42,6 +42,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+                <EditText
+                    android:id="@+id/et_keyword"
+                    android:hint="Keyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/et_id"
+                    android:hint="Id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_find"
                     android:layout_width="match_parent"
@@ -49,6 +62,23 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="10dp"
                     android:text="Find Drink"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_find_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Find By ID"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_find_keyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Find By Keyword"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_load_more"

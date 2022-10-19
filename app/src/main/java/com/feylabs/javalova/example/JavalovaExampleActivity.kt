@@ -80,6 +80,29 @@ class JavalovaExampleActivity : BaseActivity() {
             }
         }
 
+        binding.btnFindId.setOnClickListener {
+            var id = binding.etId.text.toString()
+            viewModel.detail(id)
+        }
+
+        binding.btnFindKeyword.setOnClickListener {
+            val keyword = binding.etKeyword.text.toString()
+            viewModel.search(keyword)
+        }
+
+        viewModel.searchLiveData.observe(this){
+            if(it is AppResult.Success){
+                binding.tv.text=it.data?.drinks.toString()
+            }
+        }
+
+        viewModel.detailLiveData.observe(this){
+            if(it is AppResult.Success){
+                binding.tv.text=it.data?.drinks.toString()
+            }
+        }
+
+
         binding.btnFind.setOnClickListener {
             list.clear()
             alcohol = binding.etAlcoholic.text.toString().emptyOrNull()

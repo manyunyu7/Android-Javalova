@@ -14,6 +14,30 @@ class CocktailCategoryDataSource(
     private val api: CocktailCategoryApi,
     private val drinkApi: CocktailMainApi,
 ) {
+    suspend fun findById(id:String):Flow<AppResult<DrinkDetailList>>{
+        return flow {
+            emit(AppResult.Loading())
+            val res = drinkApi.lookupId(id)
+            if (res.isSuccessful){
+                emit(AppResult.Success(res.body()))
+            }else{
+                emit(AppResult.Error(res.errorBody().toString()))
+            }
+        }
+    }
+
+    suspend fun findByName(name:String):Flow<AppResult<DrinkDetailList>>{
+        return flow {
+            emit(AppResult.Loading())
+            val res = drinkApi.searchCocktailByName(name)
+            if (res.isSuccessful){
+                emit(AppResult.Success(res.body()))
+            }else{
+                emit(AppResult.Error(res.errorBody().toString()))
+            }
+        }
+    }
+
 
     suspend fun getGeneralCategory(): Flow<AppResult<List<DrinkGeneralCategory.DrinkGeneralCategoryItem?>>> {
         return flow {

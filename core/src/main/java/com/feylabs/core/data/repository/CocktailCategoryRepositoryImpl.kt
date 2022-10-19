@@ -8,6 +8,7 @@ import com.feylabs.core.data.local.category.DrinkGlassCategoryDAO
 import com.feylabs.core.data.local.category.DrinkIngredientCategoryDAO
 import com.feylabs.core.data.remote.CocktailCategoryDataSource
 import com.feylabs.core.domain.DrinkAlcoholicCategory.DrinkAlcoholicCategoryItem
+import com.feylabs.core.domain.DrinkDetailList
 import com.feylabs.core.domain.DrinkGeneral
 import com.feylabs.core.domain.DrinkGeneralCategory.DrinkGeneralCategoryItem
 import com.feylabs.core.domain.DrinkGlassCategory.DrinkGlassCategoryItem
@@ -151,6 +152,22 @@ class CocktailCategoryRepositoryImpl(
                 fetchDrinkListDataCached(lastValue ?: "")?.let {
                     emit(it)
                 }
+            }
+        }
+    }
+
+    override suspend fun searchByName(name: String): Flow<AppResult<DrinkDetailList>> {
+        return flow {
+            datasource.findByName(name).collect {
+                emit(it)
+            }
+        }
+    }
+
+    override suspend fun lookupById(id: String): Flow<AppResult<DrinkDetailList>> {
+        return flow {
+            datasource.findById(id).collect {
+                emit(it)
             }
         }
     }

@@ -19,4 +19,12 @@ interface CocktailCategoryRepository {
         lastValue: String? = null
     ): Flow<AppResult<List<DrinkGeneral>>>
 
+    suspend fun searchByName(
+        name:String
+    ) : Flow<AppResult<DrinkDetailList>>
+
+    suspend fun lookupById(
+        id:String
+    ) : Flow<AppResult<DrinkDetailList>>
+
 }
