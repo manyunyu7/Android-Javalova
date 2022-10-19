@@ -29,11 +29,6 @@ class JavalovaExampleActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//        viewModel.getGlassCategory()
-//        viewModel.getCategoryIngredient()
-//        viewModel.getCategoryGeneral()
-//        viewModel.getCategoryAlcoholic()
-
         viewModel.categoryAlcoholicLiveData.observe(this) {
             if (it is AppResult.Success) {
                 binding.tvAlcoholic.text = "Alcoholic " + it.data.toString()
