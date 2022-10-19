@@ -101,15 +101,17 @@
         <entry key="..\:/#2021Project/Android-Sawit-Jaya-2021/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="..\:/#2021Project/Android-Sawit-Jaya-2021/app/src/main/res/menu/user_main_menu.xml" value="0.1390625" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/drawable/bg_button_negative_dialog.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/drawable/gradient_search.xml" value="0.141" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/drawable/ic_baseline_info_17.xml" value="0.1345" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1335" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/drawable/ic_cc002.xml" value="0.107" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/activity_container.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/activity_javalova_example.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_home.xml" value="0.12" />
+        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_filter.xml" value="0.394392523364486" />
+        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_list_drink.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_search_name.xml" value="0.11614583333333334" />
+        <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/fragment_search_name.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_category.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_drinks.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/Javalova/app/src/main/res/layout/item_drinks_compact.xml" value="0.2" />

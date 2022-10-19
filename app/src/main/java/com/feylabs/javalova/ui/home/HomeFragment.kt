@@ -20,9 +20,7 @@ import com.feylabs.javalova.ui.home.adapter.GlassAdapter
 import com.feylabs.javalova.ui.home.adapter.IngredientAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
-
 class HomeFragment : BaseFragment() {
-
 
     val viewModel: HomeViewModel by viewModel()
     private var _binding: FragmentHomeBinding? = null
@@ -77,7 +75,6 @@ class HomeFragment : BaseFragment() {
                 }
             }
         }
-
         viewModel.categoryIngredientLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is Error -> {
@@ -96,7 +93,6 @@ class HomeFragment : BaseFragment() {
                 }
             }
         }
-
         viewModel.categoryGeneralLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is Error -> {
@@ -114,7 +110,6 @@ class HomeFragment : BaseFragment() {
                 }
             }
         }
-
         viewModel.categoryGlassLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 is Error -> {
@@ -135,28 +130,44 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun initAction() {
-        adapterAlcoholic.setupAdapterInterface(object :AlcoholicAdapter.ItemInterface{
+
+        binding.btnFilter.setOnClickListener {
+            findNavController().navigate(R.id.nav_initFilterFragment)
+        }
+        binding.searchBox.root.setOnClickListener {
+            findNavController().navigate(R.id.nav_searchNameFragment)
+        }
+
+        adapterAlcoholic.setupAdapterInterface(object : AlcoholicAdapter.ItemInterface {
             override fun onclick(model: DrinkAlcoholicCategory.DrinkAlcoholicCategoryItem) {
-                findNavController().navigate(R.id.nav_listDrinkFragment,
-                bundleOf("alcohol" to model.strAlcoholic))
+                findNavController().navigate(
+                    R.id.nav_listDrinkFragment,
+                    bundleOf("alcohol" to model.strAlcoholic)
+                )
             }
         })
-        adapterGlass.setupAdapterInterface(object :GlassAdapter.ItemInterface{
+        adapterGlass.setupAdapterInterface(object : GlassAdapter.ItemInterface {
             override fun onclick(model: DrinkGlassCategory.DrinkGlassCategoryItem) {
-                findNavController().navigate(R.id.nav_listDrinkFragment,
-                    bundleOf("glass" to model.strGlass))
+                findNavController().navigate(
+                    R.id.nav_listDrinkFragment,
+                    bundleOf("glass" to model.strGlass)
+                )
             }
         })
-        adapterCategory.setupAdapterInterface(object :GeneralAdapter.ItemInterface{
+        adapterCategory.setupAdapterInterface(object : GeneralAdapter.ItemInterface {
             override fun onclick(model: DrinkGeneralCategory.DrinkGeneralCategoryItem) {
-                findNavController().navigate(R.id.nav_listDrinkFragment,
-                    bundleOf("category" to model.strCategory))
+                findNavController().navigate(
+                    R.id.nav_listDrinkFragment,
+                    bundleOf("category" to model.strCategory)
+                )
             }
         })
-        adapterIngredient.setupAdapterInterface(object :IngredientAdapter.ItemInterface{
+        adapterIngredient.setupAdapterInterface(object : IngredientAdapter.ItemInterface {
             override fun onclick(model: DrinkIngredientCategory.DrinkIngredientCategoryItem) {
-                findNavController().navigate(R.id.nav_listDrinkFragment,
-                    bundleOf("ingredient" to model.strIngredient1))
+                findNavController().navigate(
+                    R.id.nav_listDrinkFragment,
+                    bundleOf("ingredient" to model.strIngredient1)
+                )
             }
         })
     }

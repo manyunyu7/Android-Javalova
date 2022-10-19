@@ -16,4 +16,10 @@
     <string name="see_all">Lihat Semua</string>
     <string name="glass_type">Based On Glass Type</string>
     <string name="label_an_error_occured">"An Error Occured "</string>
+    <string name="title_implement_filter">Implement Filter</string>
+    <string name="title_based_on_ingredients">Based On Ingredients</string>
+    <string name="title_based_on_glass">Based On Glass</string>
+    <string name="title_based_on_category">Based On Category</string>
+    <string name="title_choose_item">Choose Item</string>
+    <string name="message_please_fill_filter">Please fill at least one filter</string>
 </resources>
