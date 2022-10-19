@@ -166,15 +166,21 @@ class InitFilterFragment : BaseFragment() {
 
     override fun initAction() {
         binding.btnFilter.setOnClickListener {
-            findNavController().navigate(
-                R.id.nav_listDrinkFragment,
-                bundleOf(
-                    "ingredient" to getSelectedIngredient(),
-                    "glass" to getSelectedGlass(),
-                    "category" to getSelectedGlass(),
-                    "alcohol" to getSelectedAlcohol(),
+
+            if (getSelectedAlcohol() == null && getSelectedGlass() == null && getSelectedCategory() == null
+                && getSelectedIngredient() == null
+            ) {
+                showToast(getString(R.string.message_please_fill_filter))
+            } else
+                findNavController().navigate(
+                    R.id.nav_listDrinkFragment,
+                    bundleOf(
+                        "ingredient" to getSelectedIngredient(),
+                        "glass" to getSelectedGlass(),
+                        "category" to getSelectedCategory(),
+                        "alcohol" to getSelectedAlcohol(),
+                    )
                 )
-            )
         }
     }
 
