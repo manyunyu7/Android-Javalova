@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/newsFragment"
+            android:icon="@drawable/ic_icons8_news"
+            android:title="Informasi Sawit" />
+        <item
+            android:id="@+id/mNotificationFragment"
+            android:icon="@drawable/ic_baseline_notifications_none_24"
+            android:title="Notifikasi" />
+        
+    </group>
+
+    <group android:id="@+id/menu_others2">
+        <item
+            android:id="@+id/historyFragment"
+            android:icon="@drawable/ic_baseline_history_24"
+            android:title="Riwayat Penjualan" />
+        <item
+            android:id="@+id/nav_scanQR"
+            android:icon="@drawable/ic_baseline_qr_code_2_24"
+            android:title="Scan QR Code" />
+    </group>
+
+    <group android:id="@+id/menu_others1">
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Pengaturan" />
+    </group>
+
+    <group
+        android:id="@+id/menu_others"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_baseline_logout_24"
+            android:title="Logout" />
+
+    </group>
+
+
+</menu>
