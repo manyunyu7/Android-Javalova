@@ -25,6 +25,8 @@ val databaseModule = module {
     fun provideCategoryGeneralDao(database: JavalovaDatabase) = database.categoryGeneralDao()
     fun provideCategoryAlcoholicDao(database: JavalovaDatabase) = database.categoryAlcoholicDao()
 
+    fun provideDrinkListDao(database: JavalovaDatabase) = database.drinkListDao()
+
     single { provideJavalovaDatabase(androidApplication()) }
     single { provideJavalovaDao(get()) }
 
@@ -33,5 +35,6 @@ val databaseModule = module {
     single { provideCategoryIngredientDao(get()) }
     single { provideCategoryGlassDao(get()) }
 
+    single { provideDrinkListDao(get()) }
 
 }

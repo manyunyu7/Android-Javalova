@@ -14,9 +14,9 @@ import com.feylabs.core.util.AppResult
 import kotlinx.coroutines.launch
 
 class JavalovaExampleViewModel(
-    private val repository : JavalovaRepository,
+    private val repository: JavalovaRepository,
     private val categoryRepository: CocktailCategoryRepository
-    ) : ViewModel() {
+) : ViewModel() {
 
     private var _quoteLiveData =
         MutableLiveData<AppResult<List<QuoteApiResponse.QuoteApiResponseItem>>>()
@@ -38,12 +38,38 @@ class JavalovaExampleViewModel(
         MutableLiveData<AppResult<List<DrinkAlcoholicCategoryItem>>>()
     val categoryAlcoholicLiveData get() = _categoryAlcoholicLiveData
 
+    private var _drinkListLiveData =
+        MutableLiveData<AppResult<List<DrinkGeneral>>>()
+    val drinkListLiveData get() = _drinkListLiveData
+
     fun getQuote() {
         _quoteLiveData.postValue(AppResult.Loading())
         viewModelScope.launch {
-            val result =  repository.getAllJavalovaData()
-            result.collect{
+            val result = repository.getAllJavalovaData()
+            result.collect {
                 _quoteLiveData.postValue(it)
+            }
+        }
+    }
+
+    fun getDrinkList(
+        category: String?,
+        glass: String?,
+        ingredient: String?,
+        alcoholic: String?,
+        lastValue: String?,
+    ) {
+        _drinkListLiveData.postValue(AppResult.Loading())
+        viewModelScope.launch {
+            val result = categoryRepository.getListDrink(
+                category = category,
+                glass = glass,
+                ingredient = ingredient,
+                alcoholic = alcoholic,
+                lastValue = lastValue
+            )
+            result.collect {
+                _drinkListLiveData.postValue(it)
             }
         }
     }
@@ -51,8 +77,8 @@ class JavalovaExampleViewModel(
     fun getCategoryIngredient() {
         _categoryIngredientLiveData.postValue(AppResult.Loading())
         viewModelScope.launch {
-            val result =  categoryRepository.getIngredientCategory()
-            result.collect{
+            val result = categoryRepository.getIngredientCategory()
+            result.collect {
                 _categoryIngredientLiveData.postValue(it)
             }
         }
@@ -61,8 +87,8 @@ class JavalovaExampleViewModel(
     fun getCategoryGeneral() {
         _categoryGeneralLiveData.postValue(AppResult.Loading())
         viewModelScope.launch {
-            val result =  categoryRepository.getGeneralCategory()
-            result.collect{
+            val result = categoryRepository.getGeneralCategory()
+            result.collect {
                 _categoryGeneralLiveData.postValue(it)
             }
         }
@@ -71,8 +97,8 @@ class JavalovaExampleViewModel(
     fun getCategoryAlcoholic() {
         _categoryAlcoholicLiveData.postValue(AppResult.Loading())
         viewModelScope.launch {
-            val result =  categoryRepository.getAlcoholic()
-            result.collect{
+            val result = categoryRepository.getAlcoholic()
+            result.collect {
                 _categoryAlcoholicLiveData.postValue(it)
             }
         }
@@ -81,8 +107,8 @@ class JavalovaExampleViewModel(
     fun getGlassCategory() {
         _categoryGlassLiveData.postValue(AppResult.Loading())
         viewModelScope.launch {
-            val result =  categoryRepository.getGlassCategory()
-            result.collect{
+            val result = categoryRepository.getGlassCategory()
+            result.collect {
                 _categoryGlassLiveData.postValue(it)
             }
         }

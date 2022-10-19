@@ -3,6 +3,7 @@ package com.feylabs.core.di
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.feylabs.core.network.service.CocktailCategoryApi
+import com.feylabs.core.network.service.CocktailMainApi
 import com.feylabs.core.network.service.JavalovaApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -53,6 +54,15 @@ val networkModule = module {
             .client(get())
             .build()
         retrofit.create(CocktailCategoryApi::class.java)
+    }
+
+    single<CocktailMainApi>(named("cocktailMainApi")) {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(cocktailBaseURL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(get())
+            .build()
+        retrofit.create(CocktailMainApi::class.java)
     }
 
 }

@@ -18,7 +18,8 @@ import com.feylabs.core.domain.QuoteApiResponse.QuoteApiResponseItem
     DrinkGeneralCategoryItem::class,
     DrinkGlassCategoryItem::class,
     DrinkIngredientCategoryItem::class,
-    DrinkAlcoholicCategoryItem::class], version = 3)
+    DrinkGeneral::class,
+    DrinkAlcoholicCategoryItem::class], version = 4)
 abstract class JavalovaDatabase : RoomDatabase() {
     abstract fun javalovaDao(): JavalovaDAO
 
@@ -26,4 +27,6 @@ abstract class JavalovaDatabase : RoomDatabase() {
     abstract fun categoryGeneralDao(): DrinkGeneralCategoryDAO
     abstract fun categoryIngredientDao(): DrinkIngredientCategoryDAO
     abstract fun categoryAlcoholicDao(): DrinkAlcoholicCategoryDAO
+
+    abstract fun drinkListDao(): DrinkListDAO
 }
