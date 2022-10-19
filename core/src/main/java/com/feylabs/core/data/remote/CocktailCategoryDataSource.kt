@@ -4,14 +4,13 @@ import com.feylabs.core.domain.*
 import com.feylabs.core.domain.DrinkAlcoholicCategory.DrinkAlcoholicCategoryItem
 import com.feylabs.core.domain.DrinkGlassCategory.DrinkGlassCategoryItem
 import com.feylabs.core.domain.DrinkIngredientCategory.DrinkIngredientCategoryItem
-import com.feylabs.core.network.service.CocktailApi
-import com.feylabs.core.network.service.JavalovaApi
+import com.feylabs.core.network.service.CocktailCategoryApi
 import com.feylabs.core.util.AppResult
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.Flow
 
-class CocktailDataSource(
-    private val api: CocktailApi,
+class CocktailCategoryDataSource(
+    private val api: CocktailCategoryApi,
 ) {
 
     suspend fun getGeneralCategory(): Flow<AppResult<List<DrinkGeneralCategory.DrinkGeneralCategoryItem?>>> {

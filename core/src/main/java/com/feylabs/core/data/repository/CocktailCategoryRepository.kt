@@ -5,7 +5,7 @@ import com.feylabs.core.util.AppResult
 import io.reactivex.Flowable
 import kotlinx.coroutines.flow.Flow
 
-interface CocktailRepository {
+interface CocktailCategoryRepository {
     suspend fun getGeneralCategory() : Flow<AppResult<List<DrinkGeneralCategory.DrinkGeneralCategoryItem>>?>
     suspend fun getGlassCategory() : Flow<AppResult<List<DrinkGlassCategory.DrinkGlassCategoryItem>>?>
     suspend fun getIngredientCategory() : Flow<AppResult<List<DrinkIngredientCategory.DrinkIngredientCategoryItem>>?>

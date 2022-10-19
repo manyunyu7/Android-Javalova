@@ -1,33 +1,27 @@
 package com.feylabs.core.data.repository
 
 import android.content.Context
-import android.util.Log
-import com.feylabs.core.data.local.JavalovaDAO
 import com.feylabs.core.data.local.category.DrinkAlcoholicCategoryDAO
 import com.feylabs.core.data.local.category.DrinkGeneralCategoryDAO
 import com.feylabs.core.data.local.category.DrinkGlassCategoryDAO
 import com.feylabs.core.data.local.category.DrinkIngredientCategoryDAO
-import com.feylabs.core.data.remote.CocktailDataSource
-import com.feylabs.core.data.remote.JavalovaDataSource
-import com.feylabs.core.domain.*
+import com.feylabs.core.data.remote.CocktailCategoryDataSource
 import com.feylabs.core.domain.DrinkAlcoholicCategory.DrinkAlcoholicCategoryItem
 import com.feylabs.core.domain.DrinkGeneralCategory.DrinkGeneralCategoryItem
 import com.feylabs.core.domain.DrinkGlassCategory.DrinkGlassCategoryItem
 import com.feylabs.core.domain.DrinkIngredientCategory.DrinkIngredientCategoryItem
-import com.feylabs.core.domain.QuoteApiResponse.QuoteApiResponseItem
 import com.feylabs.core.util.AppResult
 import com.feylabs.core.util.NetworkManager.isOnline
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 
-class CocktailRepositoryImpl(
-    private val datasource: CocktailDataSource,
+class CocktailCategoryRepositoryImpl(
+    private val datasource: CocktailCategoryDataSource,
     private val context: Context,
     private val alcoholicCategoryDao: DrinkAlcoholicCategoryDAO,
     private val glassCategoryDao: DrinkGlassCategoryDAO,
     private val ingredientCategoryDao: DrinkIngredientCategoryDAO,
     private val generalCategoryDao: DrinkGeneralCategoryDAO,
-) : CocktailRepository {
+) : CocktailCategoryRepository {
 
     override suspend fun getGeneralCategory(): Flow<AppResult<List<DrinkGeneralCategoryItem>>?> {
         return flow {
