@@ -42,6 +42,36 @@ class JavalovaExampleViewModel(
         MutableLiveData<AppResult<List<DrinkGeneral>>>()
     val drinkListLiveData get() = _drinkListLiveData
 
+    private var _searchLiveData =
+        MutableLiveData<AppResult<DrinkDetailList>>()
+    val searchLiveData get() = _searchLiveData
+
+    private var _detailLiveData =
+        MutableLiveData<AppResult<DrinkDetailList>>()
+    val detailLiveData get() = _detailLiveData
+
+
+    fun search(name:String){
+        _searchLiveData.postValue(AppResult.Loading())
+        viewModelScope.launch {
+            val result = categoryRepository.searchByName(name)
+            result.collect{
+                _searchLiveData.postValue(it)
+            }
+        }
+    }
+
+    fun detail(id:String){
+        _detailLiveData.postValue(AppResult.Loading())
+        viewModelScope.launch {
+            val result = categoryRepository.lookupById(id)
+            result.collect{
+                _detailLiveData.postValue(it)
+            }
+        }
+    }
+
+
     fun getQuote() {
         _quoteLiveData.postValue(AppResult.Loading())
         viewModelScope.launch {

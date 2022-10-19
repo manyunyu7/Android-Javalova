@@ -15,12 +15,12 @@ interface CocktailMainApi {
         @Query("g") glassCategory: String? = null,
     ): Response<DrinkGeneralResponse>
 
-    @GET("search.php?s=margarita")
+    @GET("search.php?")
     suspend fun searchCocktailByName(
-        @Query("g") searchKeyword: String? = null,
+        @Query("s") searchKeyword: String? = null,
     ): Response<DrinkDetailList>
 
-    @GET("lookup.php?s=margarita")
+    @GET("lookup.php")
     suspend fun lookupId(
         @Query("i") cocktailId: String? = null,
     ): Response<DrinkDetailList>
