@@ -36,6 +36,12 @@
     <dimen name="card_elevation">3dp</dimen>
     <dimen name="dialog_container_width">300dp</dimen>
     <dimen name="toolbar_size">56dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_15sp">15sp</dimen>
+    <dimen name="dimen_11sp">11sp</dimen>
+    <dimen name="dimen_90dp">90dp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
     <!-- End of init card -->
 
 </resources>

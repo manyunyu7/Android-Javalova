@@ -24,19 +24,24 @@
         android:theme="@style/Theme.Javalova"
         android:usesCleartextTraffic="true"
         tools:replace="android:roundIcon,android:theme,android:icon">
-        <activity
-            android:name=".Test"
-            android:exported="false"
-            android:label="@string/title_activity_test"
-            android:theme="@style/Theme.Javalova.NoActionBar" />
+       <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Javalova.NoActionBar">
+           <intent-filter>
+               <action android:name="android.intent.action.MAIN" />
+
+               <category android:name="android.intent.category.LAUNCHER" />
+           </intent-filter>
+       </activity>
         <activity
             android:name=".example.JavalovaExampleActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ContainerActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Javalova.NoActionBar">
         </activity>
     </application>
 
