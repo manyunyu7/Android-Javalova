@@ -21,7 +21,6 @@ class JavalovaRepositoryImpl(
         return flow {
             emit(AppResult.Loading())
             if (isOnline(context)) {
-                var successData = listOf<QuoteApiResponseItem>()
                 fetchJavalova().collect { data ->
                     if (data is AppResult.Success) {
                         dao.deleteAll()
@@ -31,7 +30,6 @@ class JavalovaRepositoryImpl(
                         }
                         dao.insertAll(list.toList())
                         emit(AppResult.Success())
-                        successData = list
                     }
                     if (data is AppResult.Error) {
                         emit(AppResult.Error("Salamualaikum"))
@@ -40,7 +38,6 @@ class JavalovaRepositoryImpl(
                 emit(fetchJavalovaCached())
             } else {
                 emit(AppResult.Error("Salamualaikum"))
-
             }
         }.flowOn(Dispatchers.IO)
     }

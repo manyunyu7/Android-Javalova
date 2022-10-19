@@ -10,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.feylabs.sawitjaya"
+        applicationId "com.feylabs.javalova"
         minSdk 22
         targetSdk 30
         versionCode 1
@@ -60,7 +60,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
 
 
-    implementation project(':RazkyUI')
     implementation project(':core')
 
     // Material Design

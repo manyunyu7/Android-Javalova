@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bootstrapRed"
     tools:context=".example.JavalovaExampleActivity">
 
-    <TextView
-        android:id="@+id/tv"
+    <ScrollView
+        android:fillViewport="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_category"
+                    android:hint="Category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/et_glass"
+                    android:hint="Glass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/et_ingredient"
+                    android:hint="Ingredient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/et_alcoholic"
+                    android:hint="Alcoholic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_find"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Find Drink"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_load_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Load More"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_alcoholic"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_glass"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_ingredient"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_general"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

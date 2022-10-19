@@ -10,17 +10,31 @@ import org.koin.dsl.module
 val databaseModule = module {
 
     fun provideJavalovaDatabase(application: Application): JavalovaDatabase {
-       return Room.databaseBuilder(application, JavalovaDatabase::class.java, "countries")
+        return Room.databaseBuilder(application, JavalovaDatabase::class.java, "countries")
             .fallbackToDestructiveMigration()
+            .allowMainThreadQueries()
             .build()
     }
 
     fun provideJavalovaDao(database: JavalovaDatabase): JavalovaDAO {
-        return  database.javalovaDao()
+        return database.javalovaDao()
     }
+
+    fun provideCategoryGlassDao(database: JavalovaDatabase) = database.categoryGlassDao()
+    fun provideCategoryIngredientDao(database: JavalovaDatabase) = database.categoryIngredientDao()
+    fun provideCategoryGeneralDao(database: JavalovaDatabase) = database.categoryGeneralDao()
+    fun provideCategoryAlcoholicDao(database: JavalovaDatabase) = database.categoryAlcoholicDao()
+
+    fun provideDrinkListDao(database: JavalovaDatabase) = database.drinkListDao()
 
     single { provideJavalovaDatabase(androidApplication()) }
     single { provideJavalovaDao(get()) }
 
+    single { provideCategoryAlcoholicDao(get()) }
+    single { provideCategoryGeneralDao(get()) }
+    single { provideCategoryIngredientDao(get()) }
+    single { provideCategoryGlassDao(get()) }
+
+    single { provideDrinkListDao(get()) }
 
 }
